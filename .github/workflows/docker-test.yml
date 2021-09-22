@@ -30,9 +30,9 @@ jobs:
         run: docker build -t dockeraction:latest .
       
       - name: Run Docker app
-        run:  docker run -it --rm dockeraction:latest python -m src.Calculator
+        run:  docker run --rm dockeraction:latest python -m src.Calculator
 
       # Runs a set of commands using the runners shell
       - name: Run docker Test
         run: |
-          docker run -it --rm dockeraction:latest python -m unittest test.testCalc
+          docker run  --rm dockeraction:latest python -m unittest test.testCalc
